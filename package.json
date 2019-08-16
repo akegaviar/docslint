@@ -5,21 +5,21 @@
   "main": "lib/markdownlint.js",
   "author": "David Anson (https://dlaa.me/)",
   "license": "MIT",
-  "homepage": "https://github.com/DavidAnson/markdownlint",
+  "homepage": "https://github.com/akegaviar/docslint",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DavidAnson/markdownlint.git"
+    "url": "https://github.com/akegaviar/docslint.git"
   },
-  "bugs": "https://github.com/DavidAnson/markdownlint/issues",
+  "bugs": "https://github.com/akegaviar/docslint/issues",
   "scripts": {
     "test": "nodeunit test/markdownlint-test.js",
     "test-cover": "nyc --check-coverage --skip-full node_modules/nodeunit/bin/nodeunit test/markdownlint-test.js",
     "test-extra": "nodeunit test/markdownlint-test-extra.js",
     "debug": "node debug node_modules/nodeunit/bin/nodeunit",
-    "lint": "eslint lib helpers test schema && eslint --env browser --global markdownit --global markdownlint --rule \"no-unused-vars: 0, no-extend-native: 0, max-statements: 0, no-console: 0, no-var: 0\" demo && eslint --rule \"no-console: 0, no-invalid-this: 0, no-shadow: 0, object-property-newline: 0\" example",
+    "lint": "eslint lib helpers test schema && eslint --env browser --global markdownit --global markdownlint --rule \"no-unused-vars: 0, no-extend-native: 0, max-statements: 0, no-console: 0, no-var: 0\" docs && eslint --rule \"no-console: 0, no-invalid-this: 0, no-shadow: 0, object-property-newline: 0\" example",
     "ci": "npm run test && npm run lint && npm run test-cover",
     "build-config-schema": "node schema/build-config-schema.js",
-    "build-demo": "cpy node_modules/markdown-it/dist/markdown-it.min.js demo && cd demo && rimraf markdownlint-browser.* && cpy file-header.js . --rename=markdownlint-browser.js && tsc --allowJs --resolveJsonModule --outDir ../lib-es3 ../lib/markdownlint.js && cpy ../helpers/package.json ../lib-es3/helpers && browserify ../lib-es3/lib/markdownlint.js --standalone markdownlint >> markdownlint-browser.js && uglifyjs markdownlint-browser.js --compress --mangle --comments --output markdownlint-browser.min.js",
+    "build-demo": "cpy node_modules/markdown-it/dist/markdown-it.min.js docs && cd docs && rimraf markdownlint-browser.* && cpy file-header.js . --rename=markdownlint-browser.js && tsc --allowJs --resolveJsonModule --outDir ../lib-es3 ../lib/markdownlint.js && cpy ../helpers/package.json ../lib-es3/helpers && browserify ../lib-es3/lib/markdownlint.js --standalone markdownlint >> markdownlint-browser.js && uglifyjs markdownlint-browser.js --compress --mangle --comments --output markdownlint-browser.min.js",
     "build-example": "npm install --no-save --ignore-scripts grunt grunt-cli gulp through2",
     "example": "cd example && node standalone.js && grunt markdownlint --force && gulp markdownlint"
   },
@@ -57,6 +57,6 @@
     "markdownlint"
   ],
   "browser": {
-    "markdown-it": "../demo/markdown-it-stub.js"
+    "markdown-it": "../docs/markdown-it-stub.js"
   }
 }
