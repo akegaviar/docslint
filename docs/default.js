@@ -14,7 +14,7 @@
   var markdownit = window.markdownit({ "html": true });
   var newLineRe = /\r\n|\r|\n/;
   var hashPrefix = "%m";
-  var rulesMd = "https://github.com/DavidAnson/markdownlint" +
+  var rulesMd = "https://github.com/akegaviar/docslint" +
     "/blob/master/doc/Rules.md";
 
   // Do-nothing function
