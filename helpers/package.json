@@ -5,12 +5,12 @@
   "main": "helpers.js",
   "author": "David Anson (https://dlaa.me/)",
   "license": "MIT",
-  "homepage": "https://github.com/DavidAnson/markdownlint",
+  "homepage": "https://github.com/akegaviar/docslint",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DavidAnson/markdownlint.git"
+    "url": "https://github.com/akegaviar/docslint.git"
   },
-  "bugs": "https://github.com/DavidAnson/markdownlint/issues",
+  "bugs": "https://github.com/akegaviar/docslint/issues",
   "keywords": [
     "markdownlint",
     "markdownlint-rule"
